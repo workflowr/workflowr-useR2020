@@ -1,0 +1,38 @@
+---
+title: "Local installation"
+author: "John Blischak"
+date: "2020-06-11"
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+To avoid technical problems, you used RStudio Cloud during the tutorial. If
+you'd like to be able to use workflowr on your local machine, follow the
+instructions below.
+
+1. Install [R][r]
+
+    * (Recommended) Install [RStudio][rstudio]
+
+    * (Optional) Install [pandoc][] ([Instructions][pandoc-install]) - If you
+    would like to use workflowr outside of RStudio
+
+    * (Optional) Install [Git][git] - If you would like to run Git commands
+    directly in the terminal
+
+1. Install workflowr from [CRAN][cran]:
+
+    ```r
+    install.packages("workflowr")
+    ```
+
+[cran]: https://cran.r-project.org/package=workflowr
+[gh]: https://github.com
+[git]: https://git-scm.com/
+[pandoc]: http://pandoc.org
+[pandoc-install]: https://rmarkdown.rstudio.com/docs/articles/pandoc.html
+[r]: https://cran.r-project.org
+[rstudio]: https://www.rstudio.com/products/rstudio/download/

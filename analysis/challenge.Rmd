@@ -1,0 +1,117 @@
+---
+title: "Reproducibility challenge"
+author: "John Blischak"
+date: "2020-06-11"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Introduction
+
+For the reproducibility challenge, you will attempt to re-run an analysis of
+Spotify song genres that was inspired by the blog post 
+[Understanding + classifying genres using Spotify audio features][blog-post]
+by Kaylin Pavlik ([\@kaylinquest][kaylinquest]).
+
+[kaylinquest]: https://twitter.com/kaylinquest
+[blog-post]: https://www.kaylinpavlik.com/classifying-songs-genres/
+
+<blockquote class="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">NEW: Understanding song genres using Spotify audio features and decision trees in <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a>. Basically: <br><br>rap: speechy 🗣️<br>rock: can’t dance to it 🤟<br>EDM: high tempo ⏩<br>R&amp;B: long songs ⏱️<br>latin: very danceable 💃<br>pop: everything else.<a href="https://t.co/q57ZDdROf7">https://t.co/q57ZDdROf7</a> <a href="https://t.co/sfxRPKvpp2">pic.twitter.com/sfxRPKvpp2</a></p>&mdash; Kaylin Pavlik (@kaylinquest) <a href="https://twitter.com/kaylinquest/status/1213138536570015745?ref_src=twsrc%5Etfw">January 3, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+The code includes a minimal machine learning style analysis with the following
+steps:
+
+* Import the songs data
+* Split the songs data into training and test sets
+* Build a tree model to classify songs into genres based on the song characteristics
+* Assess accuracy of the model on the training and test sets
+* Compute the accuracy of a model based on random guessing
+
+## Getting started
+
+The analysis purposefully contains various issues that make it difficult to
+reproduce. Open the file `spotify.Rmd` by clicking on it in the RStudio Files
+pane. Click the Knit button to re-run the analysis and find the first issue.
+
+## File paths
+
+The first error you will encounter is below:
+
+```
+Quitting from lines 16-21 (spotify.Rmd) 
+Error in file(file, "rt") : cannot open the connection
+Calls: <Anonymous> ... withVisible -> eval -> eval -> read.csv -> read.table -> file
+Execution halted
+```
+
+The function `read.csv()` is unable to open the data file. What's wrong with the
+path to the file? Apply what you know about absolute and relative paths to
+update the path and re-run the analysis.
+
+## Undefined variable
+
+The next error you encounter is:
+
+```
+Quitting from lines 27-30 (spotify.Rmd) 
+Error in sample.int(length(x), size, replace, prob) : 
+  object 'numTrainingSamples' not found
+Calls: <Anonymous> ... withVisible -> eval -> eval -> sample -> sample.int
+Execution halted
+```
+
+It looks like the variable `numTrainingSamples` isn't defined in the Rmd file.
+This error often occurs when a variable is interactively created in the R
+console, but you forget to define it in the script.
+
+Based on the description above the code chunk, can you define the variable
+`numTrainingSamples`? Hint: You can obtain the number of samples with
+`nrow(spotify)`.
+
+## Missing package
+
+The next error you encounter is:
+
+```
+Quitting from lines 36-39 (spotify.Rmd) 
+Error in rpart(genre ~ ., data = spotifyTraining) : 
+  could not find function "rpart"
+Calls: <Anonymous> ... handle -> withCallingHandlers -> withVisible -> eval -> eval
+Execution halted
+```
+
+The function `rpart()` can't be found. This can occur when you load a package
+in the current R session, but forget to put the call to `library()` in the
+script.
+
+Based on the text above the code chunk, can you figure out which package needs
+to be loaded?
+
+## Renamed variable
+
+The next error you encounter is:
+
+```
+Quitting from lines 61-66 (spotify.Rmd) 
+Error in mean(spotifyTesting[, 1] == predict_random) : 
+  object 'predict_random' not found
+Calls: <Anonymous> ... withCallingHandlers -> withVisible -> eval -> eval -> mean
+
+Execution halted
+```
+
+R can't find the variable named `predict_random`. Look at the surrounding code:
+what do you think the name of this variable should be?
+
+Renaming variables during an analysis can lead to these subtle errors. Since
+both the original and updated versions of the variable are defined in the current
+R session, the code will continue to run. But when you or someone else tries to
+run the code in a clean R session, the code will unexpectedly fail.
+
+## Compare results
+
+Success! The analysis now runs. Compare your prediction results to that of your
+partners' and/or re-run the analysis again. Are the results always identical?
+Why not? What could you do if you wanted to publish these results and allow
+others to exactly reproduce your findings?

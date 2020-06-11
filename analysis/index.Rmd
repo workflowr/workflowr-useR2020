@@ -8,4 +8,14 @@ editor_options:
   chunk_output_type: console
 ---
 
-Welcome to my research website.
+Before the tutorial:
+
+* [Setup](setup.html)
+
+During the tutorial:
+
+* [Reproducibility challenge](challenge.html)
+
+After the tutorial (optional content):
+
+* [Local installation](local.html)

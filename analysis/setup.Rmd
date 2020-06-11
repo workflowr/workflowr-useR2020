@@ -1,0 +1,51 @@
+---
+title: "Setup"
+author: "John Blischak"
+date: "2020-06-11"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+Completing the tutorial requires two online services:
+
+* [GitHub][] - Website for storing and sharing code in Git repositories
+* [RStudio Cloud][rscloud] - Cloud version of RStudio IDE in which you can
+create and share data science projects
+
+
+[GitHub]: https://github.com/
+[rscloud]: https://rstudio.cloud/
+
+Prior to the tutorial, please create an account on both GitHub and RStudio Cloud.
+
+## Create an account on GitHub
+
+To create a new account on GitHub, go to https://github.com/join/. The only
+requirement is a valid email address. The standard "Free" account is sufficient
+for the tutorial. For more details, see the GitHub Help article
+[Signing up for a new GitHub account](https://help.github.com/en/github/getting-started-with-github/signing-up-for-a-new-github-account).
+
+![](assets/create-github-account.jpg)
+
+## Create an account on RStudio Cloud
+
+To create an account on RStudio Cloud, go to
+https://login.rstudio.cloud/register/. You can either create a new username and
+password, or you can use your Google or GitHub credentials. I recommend using
+your GitHub account for authentication on RStudio Cloud. The standard "Free"
+plan is sufficient for this tutorial.
+
+![](assets/create-rscloud-account.jpg)
+
+## Create your own copy of the tutorial project
+
+To minimize any potential technical difficulties, I have created a project on
+RStudio Cloud that contains the tutorial files and has all the necessary
+packages already installed. To get started, go to
+https://rstudio.cloud/project/<insert-project-id>. This will automatically
+create a copy of the project in your user workspace. Make sure to click the
+button "Save a Permanent Copy", otherwise your copy of the project will be
+deleted afterwards.
+
+![](assets/save-a-permanent-copy.jpg)

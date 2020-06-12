@@ -1,0 +1,138 @@
+---
+title: "Customizing the appearance of your workflowr website"
+author: "John Blischak"
+date: "2020-06-12"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Introduction
+
+After you've created your workflowr website, you may wish to customize its
+appearance. This lesson covers a few key methods. For the full details, please
+read the official vignette [Customize your research
+website][wflow-02-customization].
+
+[wflow-02-customization]: https://jdblischak.github.io/workflowr/articles/wflow-02-customization.html
+
+## Change the theme
+
+The website you created with workflowr is an [rmarkdown-generated website][rmd-website].
+The rmarkdown website settings are saved in the configuration file
+`analysis/_site.yml`. The default theme applied to workflowr websites is
+"cosmo". You should see the output section below that passes site-wide settings
+to `workflowr::wflow_html()`, which in turn passes these arguments to
+`rmarkdown::html_document()`.
+
+```
+output:
+  workflowr::wflow_html:
+    toc: yes
+    toc_float: yes
+    theme: cosmo
+    highlight: textmate
+```
+
+[rmd-website]: https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html
+
+The available themes are from [Bootswatch][], but only a [subset are
+available][rmd-themes] for use with rmarkdown:
+
+* cerulean
+* cosmo
+* darkly
+* flatly
+* journal
+* lumen
+* paper
+* readable
+* sandstone
+* simplex
+* spacelab
+* united
+* yeti
+
+[bootswatch]: https://bootswatch.com/
+[rmd-themes]: https://bookdown.org/yihui/rmarkdown/html-document.html#appearance-and-style
+
+As an example, this workflowr website uses the theme "
+`r yaml::read_yaml("analysis/_site.yml")[["output"]][["workflowr::wflow_html"]][["theme"]]`
+".
+
+Go to [Bootswatch][] and find a few themes you like. Then try them out by
+changing the value of theme in `analysis/_site.yml` and rebuilding one of the
+pages. You can either click the Knit HTML button or use `wflow_build()`. For
+convenience, choose a fast running Rmd so you can quickly explore multiple
+themes. Note that the updated theme will only be applied to rebuilt pages, so
+you'll see the previous theme on different pages if you click around the
+website.
+
+Once you've decided on a theme, commit the change to `analysis/_site.yml` while
+additional republishing all the Rmd files with the following command:
+
+```{r republish-theme, eval=FALSE}
+wflow_publish("analysis/_site.yml", "Change the theme", republish = TRUE)
+```
+
+## Change the appearance of the workflowr buttons
+
+You don't have to limit yourself to the pre-made themes. If you know CSS or are
+willing to tinker, you can fully customize every aspect of the HTML output.
+You do this by [specifying a custom CSS file][custom-css]. In the context of a
+workflowr project, you can create the file `analysis/style.css` and then add it
+to the `output` section of `analysis/_site.yml`. You can of course name the CSS
+whatever you like. The important thing is that you save it in `analysis/` and
+specify the path relative to `_site.yml`.
+
+```
+output:
+  workflowr::wflow_html:
+    toc: yes
+    toc_float: yes
+    theme: cosmo
+    highlight: textmate
+    css: style.css
+```
+
+[custom-css]: https://bookdown.org/yihui/rmarkdown/html-document.html#custom-css
+
+The workflowr buttons can be targeted with [CSS class selectors][mdn-class-selectors].
+For example, to decrease the font size of the text in all the workflowr buttons,
+you could add the following rule:
+
+```
+.btn-workflowr {
+  font-size: 75%;
+}
+```
+
+[mdn-class-selectors]: https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors
+
+You can also apply styles that are limited to specific types of workflowr
+buttons by using the corresponding class:
+
+CSS class  | workflowr button
+------------- | -------------
+`.btn-workflowr-report` | The button for the workflowr report at the top of the page
+`.btn-workflowr-fig`  | The buttons for table of past versions below each figure
+`.btn-workflowr-sessioninfo` | The button for the session information at the bottom of the page
+
+For example, to center the buttons of past versions below each figure, you could
+add the following rule:
+
+```
+.btn-workflowr-fig {
+  display: block;
+  margin: auto;
+}
+```
+
+Similar to above, once you are satisfied with the changes you've made to the
+appearance, you can commit the changes and republish the webpages:
+
+```{r republish-css, eval=FALSE}
+wflow_publish(c("analysis/_site.yml", "analysis/style.css"),
+              "Style the workflowr buttons",
+              republish = TRUE)
+```

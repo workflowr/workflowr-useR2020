@@ -19,3 +19,4 @@ During the tutorial:
 After the tutorial (optional content):
 
 * [Local installation](local.html)
+* [Customizing the appearance of your workflowr website](customization.html)

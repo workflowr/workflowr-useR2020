@@ -1,5 +1,5 @@
 ---
-title: "Home"
+title: "Create and share reproducible code with R Markdown and workflowr"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:

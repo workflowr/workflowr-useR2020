@@ -1,5 +1,6 @@
-# workflowr-useR2020
+# Create and share reproducible code with R Markdown and workflowr
 
-A [workflowr][] project.
+The online material for the [useR! tutorial][tutorial]
+Create and share reproducible code with R Markdown and workflowr.
 
-[workflowr]: https://github.com/jdblischak/workflowr
+[tutorial]: https://user2020.r-project.org/program/tutorials/

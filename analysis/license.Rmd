@@ -7,15 +7,12 @@ editor_options:
   chunk_output_type: console
 ---
 
-What license are you using for your code? See [choosealicense.com][choose] for
-help deciding. It's a convention to save a file `LICENSE` in the root of your
-Git repo that contains the license text.
+The tutorial content is available under the [CC-BY 4.0][cc-by] license.
+You are free to re-use this material for any purpose, provided that
+you attribute this repository as the source:
 
-What license are you using for the written content on your site? It is
-traditional to choose a [Creative Commons][cc] license for this type of content.
+> "Create and share reproducible code with R Markdown and workflowr"
+> by John Blischak and Peter Carbonetto
+> at https://github.com/workflowr/workflowr-useR2020
 
-[choose]: http://choosealicense.com/
-[cc]: https://creativecommons.org/choose/
-
-How should others cite your work? It's a convention to save a file `CITATION`
-in the root of your Git repo that contains the citation information.
+[cc-by]: https://creativecommons.org/licenses/by/4.0/

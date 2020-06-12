@@ -7,4 +7,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-Describe your project.
+This tutorial was delivered online as part of the virtual [useR!
+2020][user!2020] conference.
+
+[useR!2020]: https://user2020.r-project.org/

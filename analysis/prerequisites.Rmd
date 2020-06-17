@@ -1,0 +1,64 @@
+---
+title: "Tutorial prerequisites"
+author: "John Blischak"
+date: "2020-06-17"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+To get the most out of attending this tutorial, it will help if you have had the
+following experiences:
+
+* Analyzed data with R in RStudio
+* Knit an R Markdown file in RStudio
+
+## R and RStudio
+
+The tutorial will take place within the RStudio IDE hosted on [RStudio Cloud][rscloud].
+Thus it will be advantageous if you are already familiar with the basics of the
+RStudio IDE.
+
+[rscloud]: https://rstudio.cloud/
+
+In the top left is the editor pane. This is where you write your R code that is
+saved to files on your computer.
+
+In the bottom left is the R console. This is where your R code is executed. You
+can either directly type commands into the R console, or you can send lines from
+your scripts to be executed in the console with Ctrl/Cmd+Enter.
+
+In the top right are various panes. Of particular interest are:
+
+* Environment - this shows the objects that are currently defined in your R
+session running in the R console
+
+* History - this is the history of commands you have entered in the R console
+
+* Git - This pane is only present if a Git repository is present. Thus you won't
+see this until later in the tutorial when you create a workflowr project (which
+creates a Git repository for you)
+
+In the bottom right are various panes. Of particular interest:
+
+* Files - The file explorer allows you to navigate directories on your machine
+and perform common operations like renaming or moving a file. If you click on a
+file, it will open in the editor pane.
+
+* Plots - When you create a plot in the R console, it will be displayed in the
+Plots pane
+
+* Viewer - This displays web content like the HTML created from R Markdown files
+
+For more information, check out the Software Carpentry lesson on [Introduction
+to R and
+RStudio](https://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/index.html).
+
+## Knit an R Markdown file in RStudio
+
+When you open an R Markdown file in the editor pane, a button named "Knit" will
+display. If you click on it, it will knit the document to HTML. You can view the
+progress in the newly created "R Markdown" tab in the bottom left. Another
+option for running the code is to click on the button "Run". You can run
+individual chunks or "Run All". Furthermore, just like R scripts, you can send
+individual lines to the R console with Ctrl/Cmd+Enter.

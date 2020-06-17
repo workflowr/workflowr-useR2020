@@ -15,6 +15,7 @@ Before the tutorial:
 During the tutorial:
 
 * [Reproducibility challenge](challenge.html)
+* [Create a workflowr project](workflowr.html)
 
 After the tutorial (optional content):
 

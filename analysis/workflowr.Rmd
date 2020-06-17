@@ -1,0 +1,101 @@
+---
+title: "Create a workflowr project"
+author: "John Blischak"
+date: "2020-06-17"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+Modified version of workflowr vignette
+[Getting started with workflowr][vig-getting-started]
+
+[vig-getting-started]: https://jdblischak.github.io/workflowr/articles/wflow-01-getting-started.html
+
+```{r package}
+library(workflowr)
+```
+
+```{r git-config}
+# Replace the example text with your information
+wflow_git_config(user.name = "Your Name", user.email = "email@domain")
+```
+
+
+```{r start}
+wflow_start(".", name = "Spotify song analysis", existing = TRUE)
+```
+
+```output
+wflow_start:
+- Files added to existing directory /cloud/project
+- Project name is "Spotify song analysis"
+- Working directory changed to /cloud/project
+- Git repo initiated at /cloud/project
+- Files were committed in version 838de5f
+```
+
+```{r build}
+wflow_build()
+```
+
+Move files
+
+```{r move-files}
+file.rename("spotify.Rmd", "analysis/spotify.Rmd")
+file.rename("spotify.csv", "data/spotify.csv")
+```
+
+Update path in `spotify.Rmd`:
+
+```
+spotify <- read.csv("data/spotify.csv", stringsAsFactors = FALSE)
+```
+
+```{r build-2}
+wflow_build()
+```
+
+Check results - everyone should get same numbers
+
+Look at the reproducibility report
+
+Open `_workflowr.yml` to show the seed that is set
+
+```{r status}
+wflow_status()
+```
+
+Add link in `index.Rmd`:
+
+```{r link}
+wflow_open("analysis/index.Rmd")
+```
+
+```
+[Link to spotify analysis](spotify.html)
+```
+
+```{r github}
+wflow_use_github("username", repository = "workflowr-spotify", create_on_github = FALSE)
+```
+
+```{r publish}
+wflow_publish(c("analysis/*Rmd", "data/spotify.csv"), "Add spotify analysis")
+```
+
+```{r status-2}
+wflow_status()
+```
+
+Create [new repository on GitHub](https://github.com/new)
+
+```{r git-push}
+wflow_git_push()
+```
+
+Activate GitHub Pages

@@ -7,11 +7,10 @@ editor_options:
   chunk_output_type: console
 ---
 
-To get the most out of attending this tutorial, it will help if you have had the
-following experiences:
+To get the most out of attending this tutorial, it will help if you have previous experience with:
 
-* Analyzed data with R in RStudio
-* Knit an R Markdown file in RStudio
+* Analyzing data with R in RStudio
+* Knitting an R Markdown file in RStudio
 
 ## R and RStudio
 
@@ -20,6 +19,8 @@ Thus it will be advantageous if you are already familiar with the basics of the
 RStudio IDE.
 
 [rscloud]: https://rstudio.cloud/
+
+![](assets/rstudio-panes.png)
 
 In the top left is the editor pane. This is where you write your R code that is
 saved to files on your computer.
@@ -50,6 +51,19 @@ Plots pane
 
 * Viewer - This displays web content like the HTML created from R Markdown files
 
+A very useful feature for interactively exploring your data while simultaneously
+recording your steps is the ability to send lines of code from the file open in
+the Editor directly to the R console to be executed. You can do this by clicking
+on the button "Run" or using the keyboard shortcut Ctrl/Cmd+Enter.
+
+In the gif below, I demonstrate both methods. First I define the vector `x` by
+clicking the "Run" button. Notice how the Environment pane updates with the
+newly defined object. Second I use the keyboard shortcut Ctrl+Enter to send the
+second line of code to the R console. This plots a histogram of the data, which
+is displayed in the Plots pane.
+
+![](assets/rstudio-send-code.gif)
+
 For more information, check out the Software Carpentry lesson on [Introduction
 to R and
 RStudio](https://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/index.html).
@@ -58,7 +72,33 @@ RStudio](https://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/index
 
 When you open an R Markdown file in the editor pane, a button named "Knit" will
 display. If you click on it, it will knit the document to HTML. You can view the
-progress in the newly created "R Markdown" tab in the bottom left. Another
-option for running the code is to click on the button "Run". You can run
+progress in the newly created "R Markdown" tab in the bottom left.
+
+In the gif below, I click the "Knit" button to knit the R Markdown file. I
+include the chunk `Sys.sleep(1)` so that it pauses long enough for you to see
+the R Markdown pane appear.
+
+![](assets/rstudio-knit.gif)
+
+Another option for running the code is to click on the button "Run". You can run
 individual chunks or "Run All". Furthermore, just like R scripts, you can send
 individual lines to the R console with Ctrl/Cmd+Enter.
+
+In the gif below, I execute all the code chunks by clicking "Run All". Note that
+before I do this, I instruct RStudio to send the chunk output to the R console
+instead of displaying it inline. This makes it easier to interactively develop
+the code in the R console and keeps the file uncluttered.
+
+![](assets/rstudio-run-all.gif)
+
+Lastly, it is important to understand how to interpret the error messages
+produced when knitting R Markdown files, which you will use during the tutorial.
+
+In the gif below, I knit an R Markdown file that produces an error trying to run
+`log("a")`. The default view only displays the error message. I click on
+"Output" to see the full log. This informs you the lines in the source R
+Markdown file to check for the error. Importantly, it doesn't pinpoint the exact
+line where the error occurred. Instead it reports the range of lines spanned by
+the code chunk where the error occurred.
+
+![](assets/rstudio-knit-error.gif)

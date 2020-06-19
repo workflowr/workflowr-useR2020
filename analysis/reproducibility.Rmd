@@ -11,6 +11,24 @@ editor_options:
 
 # Reproducibility is difficult
 
+----------
+
+![](assets/phd031214s.gif)
+
+["Scratch"](http://phdcomics.com/comics.php?f=1689
+) by Jorge Cham ([www.phdcomics.com](www.phdcomics.com/))
+
+## The study results are discouraging
+
+![](assets/ioannidis-2009-fig-1.png)
+
+[Ioannidis et al., 2009](http://www.ncbi.nlm.nih.gov/pubmed/19174838)
+
+## Every step helps
+
+![](assets/peng-2011-fig-01.jpg)
+[Peng, 2011](https://pubmed.ncbi.nlm.nih.gov/22144613/)
+
 # Literate programming with R Markdown
 
 # Version control with Git

@@ -43,3 +43,15 @@ editor_options:
 # Don't save workspace
 
 # How can workflowr help?
+
+## R Markdown focused
+
+## Automated version control
+
+## Reproducibility safeguards
+
+* Set the seed
+* Run code in clean environment
+* Record session information
+* Warn if absolute paths are used
+* Warn if results are from cached chunks

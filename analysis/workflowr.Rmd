@@ -2,7 +2,9 @@
 title: "Create a workflowr project"
 author: "John Blischak"
 date: "2020-06-17"
-output: workflowr::wflow_html
+output:
+  workflowr::wflow_html:
+    toc: false
 editor_options:
   chunk_output_type: console
 ---
@@ -11,82 +13,161 @@ editor_options:
 knitr::opts_chunk$set(eval = FALSE)
 ```
 
-Modified version of workflowr vignette
-[Getting started with workflowr][vig-getting-started]
+Now that you have the Spotify analysis running, you will create a workflowr
+project to share the results and make sure it stays reproducible.
+This is a modified version of the official workflowr vignette
+[Getting started with workflowr][vig-getting-started].
 
 [vig-getting-started]: https://jdblischak.github.io/workflowr/articles/wflow-01-getting-started.html
+
+Start by loading the workflowr package in the R console.
 
 ```{r package}
 library(workflowr)
 ```
+
+Workflowr uses Git to version all the changes to the code and results. For each
+version it snapshots, Git requires a user name and email for attribution. Thus
+before creating the workflowr project, tell Git your name and email address you
+would like to use. It is convenient if the email address is the same one you
+used to register with GitHub, but not required. This command only has to be run
+once per computer (i.e. not every time you create a new workflowr project).
 
 ```{r git-config}
 # Replace the example text with your information
 wflow_git_config(user.name = "Your Name", user.email = "email@domain")
 ```
 
+You can run `wflow_git_config()` again with no arguments to confirm that Git is
+configured properly.
+
+```{r git-config-confirm}
+wflow_git_config()
+```
+
+Now that Git is configured, you can start your workflowr project using
+`wflow_start()`. It is more common to start a workflowr proejct in a brand new
+directory, but the workflowr setup can also be added to an existing analysis. To
+limit the tutorial to one RStudio Cloud project, you will create the workflowr
+project in the same directory where you've already been working on the Spotify
+analysis.
+
+The first argument to `wflow_start()` is the directory. The command below uses
+the relative path `.`, which refers to the current working directory. In this
+case it is equivalent to using the absolute path `/cloud/project/`. The second
+argument is the name of the project, which will get displayed on the website.
+And the third argument informs `wflow_start()` that the directory already
+exists, since by default it expects to create a new one.
 
 ```{r start}
-wflow_start(".", name = "Spotify song analysis", existing = TRUE)
+wflow_start(directory = ".", name = "Spotify song analysis", existing = TRUE)
 ```
 
-```output
-wflow_start:
-- Files added to existing directory /cloud/project
-- Project name is "Spotify song analysis"
-- Working directory changed to /cloud/project
-- Git repo initiated at /cloud/project
-- Files were committed in version 838de5f
+That adds various files and directories. For the purpose of the tutorial, focus
+on the following subset:
+
 ```
+├── _workflowr.yml    # workflowr-specific settings
+├── analysis/         # Rmd files
+│   ├── index.Rmd     # Creates website homepage
+│   └── _site.yml     # website-specific settings
+├── data/             # data files
+├── docs/             # website files
+```
+
+The most important thing to remember is to perform your analysis in Rmd files in
+`analysis/`, and that the website files are saved in `docs/`.
+
+To see the default state of the website, run `wflow_build()`. It will build all
+the Rmd files currently in `analysis/` and save the HTML files in `docs/`. The
+website will either pop up in a new window or be displayed in the Viewer pane.
 
 ```{r build}
 wflow_build()
 ```
 
-Move files
+Conveniently, if you run it a second time, it does nothing because the Rmd files
+have not changed since the last time the HTML files were built.
+
+```{r build-nothing}
+wflow_build()
+```
+
+Next add the Spotify analysis files to the workflowr project. You can do this
+via the files Pane or the running the commands below in the R console. The Rmd
+file goes to `analysis/` and the data file to `data/`.
 
 ```{r move-files}
 file.rename("spotify.Rmd", "analysis/spotify.Rmd")
 file.rename("spotify.csv", "data/spotify.csv")
 ```
 
-Update path in `spotify.Rmd`:
+And since `spotify.csv` is no longer in the same directory as `spotify.Rmd`,
+you need to update the path passed to `read.csv()`. By default, all Rmd files
+in a workflowr project are executed in the root of the project, so the updated
+path is `data/spotify.csv`. Open `analysis/spotify.Rmd` and change the import
+line to the line below:
 
 ```
 spotify <- read.csv("data/spotify.csv", stringsAsFactors = FALSE)
 ```
 
-```{r build-2}
+Run `wflow_build()` again. This will build `analysis/spotify.Rmd` and then open
+the new file `docs/spotify.html`.
+
+```{r build-spotify}
 wflow_build()
 ```
 
-Check results - everyone should get same numbers
+Check the accuracy of the decision tree model and the random guessing model.
+Did you obtain the same results as everyone?
 
-Look at the reproducibility report
+This is because workflowr automatically sets the seed at the beginning of each
+Rmd file. The default seed used for a project is the date in the format
+`YYYYMMDD`. Open the file `_workflowr.yml` to confirm.
 
-Open `_workflowr.yml` to show the seed that is set
+Also, you can look at the reproducibility report at the top of the file to see
+the seed that is set and all the other reproducibility checks. The first check
+is failing because the Rmd file hasn't been versioned with Git yet.
+
+
+
+
+So far you've run `wflow_build()` multiple times. This builds the HTML files, but
+it doesn't version anything with Git. Run `wflow_status()` to see the current
+status of the Rmd files. The default Rmd files are "Unpublished" because they
+have been versioned with Git, but not their HTML files. The new `spotify.Rmd` is
+"Scratch" because its Rmd has not been versioned yet.
 
 ```{r status}
 wflow_status()
 ```
 
-Add link in `index.Rmd`:
+![](https://f1000researchdata.s3.amazonaws.com/manuscripts/22923/510c4de2-c96e-4471-9853-4ebce466a666_figure4.gif)
 
-```{r link}
-wflow_open("analysis/index.Rmd")
-```
+There currently isn't a convenient way to navigate to the Spotify analysis on
+the website. To fix this, open `analysis/index.Rmd`, add the line below, and
+run `wflow_build()` again.
 
 ```
 [Link to spotify analysis](spotify.html)
 ```
 
-```{r github}
-wflow_use_github("username", repository = "workflowr-spotify", create_on_github = FALSE)
-```
+The line above is markdown syntax to create a link to the file `spotify.html`.
+
+Now that the website is looking good, it is time to "publish" your results.
 
 ```{r publish}
 wflow_publish(c("analysis/*Rmd", "data/spotify.csv"), "Add spotify analysis")
 ```
+
+`wflow_publish()` performs three steps:
+
+1. Commits the Rmd files and data file with Git
+1. Executes the code to build the HTML files
+1. Commits the HTML files with Git
+
+Re-running `wflow_status()` shows that all the files are "published":
 
 ```{r status-2}
 wflow_status()
@@ -94,8 +175,16 @@ wflow_status()
 
 Create [new repository on GitHub](https://github.com/new)
 
+Configure Git remote
+
+```{r git-remote}
+wflow_git_remote("origin", user = "<github-username>", repo = "workflowr-spotify")
+```
+
+Push to GitHub. Enter username and password.
+
 ```{r git-push}
 wflow_git_push()
 ```
 
-Activate GitHub Pages
+Go to "Settings" and activate GitHub Pages.

@@ -4,6 +4,7 @@ author: "John Blischak"
 date: "2020-06-18"
 output:
   ioslides_presentation:
+    css: "slides.css"
     widescreen: true
 editor_options:
   chunk_output_type: console

@@ -173,18 +173,55 @@ Re-running `wflow_status()` shows that all the files are "published":
 wflow_status()
 ```
 
-Create [new repository on GitHub](https://github.com/new)
+Now that the files are committed in the Git repository, it's time to push them
+to GitHub to share the analysis results.
 
-Configure Git remote
+Go to [https://github.com/new](https://github.com/new) (you'll be prompted to
+login first if needed) to create a new repository. In the box labeled
+"Repository name", type "workflowr-spotify". Leave all the other settings as is,
+and click on the button "Create repository".
+
+Back in the R console, you need to inform Git of the GitHub repository you just
+created. In Git terminology, a Git repository on a cloud service like GitHub is
+called a "remote". Workflowr provides a convenience function `wflow_git_remote()`
+to register remote repositores with Git. Run the command below using your GitHub
+username:
 
 ```{r git-remote}
 wflow_git_remote("origin", user = "<github-username>", repo = "workflowr-spotify")
 ```
 
-Push to GitHub. Enter username and password.
+Run `wflow_git_remote()` a second time, this time with no arguments, to have it
+list the available remote repositories. The URL will look something like
+`https://github.com/<github-username>/workflowr-spotify.git`.
+
+```{r git-remote-confirm}
+wflow_git_remote()
+```
+
+Note that "origin" is an alias for referring to that long URL. The name "origin"
+is a convention, and could be anything you wanted. The main benefit of following
+the convention is that it will make it easier to follow online 
+troubleshooting resources.
+
+Now that Git knows about the remote GitHub repository, push the project to
+GitHub using `wflow_git_push()`. You'll be prompted to enter your GitHub
+username in the R console followed by a secure popup menu for entering your
+GitHub password.
 
 ```{r git-push}
 wflow_git_push()
 ```
 
-Go to "Settings" and activate GitHub Pages.
+The updated GitHub repository will automatically open in a new tab. To activate
+the website, navigate to the Settings tab and scroll down to the section "GitHub
+Pages". Set the "Source" to "master branch /docs folder". After it automatically
+updates, scroll back down to the same section to retreive the URL. It will look
+like `https://<github-username>.github.io/workflowr-spotify/`. Click on it to
+view your workflowr website. If it displays a "404 Not Found" error, manually
+add `index.html` to the URL in the web browser (Long-term you don't have to do
+this. It only applies when GitHub Pages is first launching your website).
+
+Now you have a website that containing your reprodubible results that you can
+share with your colleagues! And each time you make changes and push them to
+GitHub, the website will automatically update.

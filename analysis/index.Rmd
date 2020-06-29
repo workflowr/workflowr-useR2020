@@ -15,7 +15,7 @@ Before the tutorial:
 
 During the tutorial:
 
-* [How can I make my R code more reproducible for myself and others?](reproducibility.html)
+* [How can I make my R code more reproducible for myself and others?](https://docs.google.com/presentation/d/1z6hhjGSUW7HiZUYFOg3XqVRn3y9Tabo0kMdGMh8iPr4/edit?usp=sharing)
 * [Reproducibility challenge](challenge.html)
 * [Create a workflowr project](workflowr.html)
 

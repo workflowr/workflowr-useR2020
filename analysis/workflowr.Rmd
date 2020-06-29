@@ -222,6 +222,6 @@ view your workflowr website. If it displays a "404 Not Found" error, manually
 add `index.html` to the URL in the web browser (Long-term you don't have to do
 this. It only applies when GitHub Pages is first launching your website).
 
-Now you have a website that containing your reprodubible results that you can
+Now you have a website that containing your reproducible results that you can
 share with your colleagues! And each time you make changes and push them to
 GitHub, the website will automatically update.

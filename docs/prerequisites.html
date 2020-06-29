@@ -11,9 +11,9 @@
 
 <meta name="author" content="John Blischak" />
 
-<meta name="date" content="2020-06-11" />
+<meta name="date" content="2020-06-17" />
 
-<title>Local installation</title>
+<title>Tutorial prerequisites</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,6 +21,9 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -261,6 +264,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -268,6 +334,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -311,9 +387,9 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Local installation</h1>
+<h1 class="title toc-ignore">Tutorial prerequisites</h1>
 <h4 class="author">John Blischak</h4>
-<h4 class="date">2020-06-11</h4>
+<h4 class="date">2020-06-17</h4>
 
 </div>
 
@@ -401,7 +477,7 @@ Note that any generated files, e.g. HTML, png, CSS, etc., are not included in t
 <div id="versions" class="tab-pane fade">
 
 <p>
-These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/local.Rmd</code>) and HTML (<code>docs/local.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/prerequisites.Rmd</code>) and HTML (<code>docs/prerequisites.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
 </p>
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
@@ -427,19 +503,19 @@ Message
 <tbody>
 <tr>
 <td>
-html
+Rmd
 </td>
 <td>
-<a href="https://rawcdn.githack.com/workflowr/workflowr-useR2020/759ea05aa038be9ed7ff27d3419d43daa6d204e1/docs/local.html" target="_blank">759ea05</a>
+<a href="https://github.com/workflowr/workflowr-useR2020/blob/c7607946e20c32f4871c24b2e37327b208580691/analysis/prerequisites.Rmd" target="_blank">c760794</a>
 </td>
 <td>
 John Blischak
 </td>
 <td>
-2020-06-12
+2020-06-18
 </td>
 <td>
-Build site.
+Add gif’s for prerequisites page.
 </td>
 </tr>
 <tr>
@@ -447,33 +523,16 @@ Build site.
 Rmd
 </td>
 <td>
-<a href="https://github.com/workflowr/workflowr-useR2020/blob/f947ba6db0bcefca5cd736c5b0515006d3e0bd1e/analysis/local.Rmd" target="_blank">f947ba6</a>
+<a href="https://github.com/workflowr/workflowr-useR2020/blob/3e120141c692b9d458d577e637c9b011f94f8df2/analysis/prerequisites.Rmd" target="_blank">3e12014</a>
 </td>
 <td>
 John Blischak
 </td>
 <td>
-2020-06-11
+2020-06-17
 </td>
 <td>
-Start outline.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/workflowr/workflowr-useR2020/blob/485fc5d44829f97f0d4706c2e61a1f164df8b1f8/analysis/local.Rmd" target="_blank">485fc5d</a>
-</td>
-<td>
-John Blischak
-</td>
-<td>
-2020-06-11
-</td>
-<td>
-Add local installation instructions.
+Start prerequisites page.
 </td>
 </tr>
 </tbody>
@@ -483,17 +542,46 @@ Add local installation instructions.
 </div>
 </div>
 </div>
-<p>To avoid technical problems, you used RStudio Cloud during the tutorial. If you’d like to be able to use workflowr on your local machine, follow the instructions below.</p>
-<ol style="list-style-type: decimal">
-<li><p>Install <a href="https://cran.r-project.org">R</a></p>
+<p>To get the most out of attending this tutorial, it will help if you have previous experience with:</p>
 <ul>
-<li><p>(Recommended) Install <a href="https://www.rstudio.com/products/rstudio/download/">RStudio</a></p></li>
-<li><p>(Optional) Install <a href="http://pandoc.org">pandoc</a> (<a href="https://rmarkdown.rstudio.com/docs/articles/pandoc.html">Instructions</a>) - If you would like to use workflowr outside of RStudio</p></li>
-<li><p>(Optional) Install <a href="https://git-scm.com/">Git</a> - If you would like to run Git commands directly in the terminal</p></li>
-</ul></li>
-<li><p>Install workflowr from <a href="https://cran.r-project.org/package=workflowr">CRAN</a>:</p>
-<pre><code>install.packages(&quot;workflowr&quot;)</code></pre></li>
-</ol>
+<li>Analyzing data with R in RStudio</li>
+<li>Knitting an R Markdown file in RStudio</li>
+</ul>
+<div id="r-and-rstudio" class="section level2">
+<h2>R and RStudio</h2>
+<p>The tutorial will take place within the RStudio IDE hosted on <a href="https://rstudio.cloud/">RStudio Cloud</a>. Thus it will be advantageous if you are already familiar with the basics of the RStudio IDE.</p>
+<p><img src="assets/rstudio-panes.png" /></p>
+<p>In the top left is the editor pane. This is where you write your R code that is saved to files on your computer.</p>
+<p>In the bottom left is the R console. This is where your R code is executed. You can either directly type commands into the R console, or you can send lines from your scripts to be executed in the console with Ctrl/Cmd+Enter.</p>
+<p>In the top right are various panes. Of particular interest are:</p>
+<ul>
+<li><p>Environment - this shows the objects that are currently defined in your R session running in the R console</p></li>
+<li><p>History - this is the history of commands you have entered in the R console</p></li>
+<li><p>Git - This pane is only present if a Git repository is present. Thus you won’t see this until later in the tutorial when you create a workflowr project (which creates a Git repository for you)</p></li>
+</ul>
+<p>In the bottom right are various panes. Of particular interest:</p>
+<ul>
+<li><p>Files - The file explorer allows you to navigate directories on your machine and perform common operations like renaming or moving a file. If you click on a file, it will open in the editor pane.</p></li>
+<li><p>Plots - When you create a plot in the R console, it will be displayed in the Plots pane</p></li>
+<li><p>Viewer - This displays web content like the HTML created from R Markdown files</p></li>
+</ul>
+<p>A very useful feature for interactively exploring your data while simultaneously recording your steps is the ability to send lines of code from the file open in the Editor directly to the R console to be executed. You can do this by clicking on the button “Run” or using the keyboard shortcut Ctrl/Cmd+Enter.</p>
+<p>In the gif below, I demonstrate both methods. First I define the vector <code>x</code> by clicking the “Run” button. Notice how the Environment pane updates with the newly defined object. Second I use the keyboard shortcut Ctrl+Enter to send the second line of code to the R console. This plots a histogram of the data, which is displayed in the Plots pane.</p>
+<p><img src="assets/rstudio-send-code.gif" /></p>
+<p>For more information, check out the Software Carpentry lesson on <a href="https://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/index.html">Introduction to R and RStudio</a>.</p>
+</div>
+<div id="knit-an-r-markdown-file-in-rstudio" class="section level2">
+<h2>Knit an R Markdown file in RStudio</h2>
+<p>When you open an R Markdown file in the editor pane, a button named “Knit” will display. If you click on it, it will knit the document to HTML. You can view the progress in the newly created “R Markdown” tab in the bottom left.</p>
+<p>In the gif below, I click the “Knit” button to knit the R Markdown file. I include the chunk <code>Sys.sleep(1)</code> so that it pauses long enough for you to see the R Markdown pane appear.</p>
+<p><img src="assets/rstudio-knit.gif" /></p>
+<p>Another option for running the code is to click on the button “Run”. You can run individual chunks or “Run All”. Furthermore, just like R scripts, you can send individual lines to the R console with Ctrl/Cmd+Enter.</p>
+<p>In the gif below, I execute all the code chunks by clicking “Run All”. Note that before I do this, I instruct RStudio to send the chunk output to the R console instead of displaying it inline. This makes it easier to interactively develop the code in the R console and keeps the file uncluttered.</p>
+<p><img src="assets/rstudio-run-all.gif" /></p>
+<p>Lastly, it is important to understand how to interpret the error messages produced when knitting R Markdown files, which you will use during the tutorial.</p>
+<p>In the gif below, I knit an R Markdown file that produces an error trying to run <code>log("a")</code>. The default view only displays the error message. I click on “Output” to see the full log. This informs you the lines in the source R Markdown file to check for the error. Importantly, it doesn’t pinpoint the exact line where the error occurred. Instead it reports the range of lines spanned by the code chunk where the error occurred.</p>
+<p><img src="assets/rstudio-knit-error.gif" /></p>
+</div>
 
 
 <!-- Adjust MathJax settings so that all math formulae are shown using
@@ -509,6 +597,8 @@ footer is added to webpages before the MathJax javascript. -->
 </script>
 
 
+</div>
+</div>
 
 </div>
 
@@ -541,6 +631,32 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

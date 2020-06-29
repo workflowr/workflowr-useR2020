@@ -11,9 +11,9 @@
 
 <meta name="author" content="John Blischak" />
 
-<meta name="date" content="2020-06-12" />
+<meta name="date" content="2020-06-17" />
 
-<title>Customizing the appearance of your workflowr website</title>
+<title>Create a workflowr project</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,9 +21,6 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -264,69 +261,6 @@ $(document).ready(function () {
 
 
 
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-
 
 </head>
 
@@ -334,16 +268,6 @@ div.tocify {
 
 
 <div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -387,9 +311,9 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Customizing the appearance of your workflowr website</h1>
+<h1 class="title toc-ignore">Create a workflowr project</h1>
 <h4 class="author">John Blischak</h4>
-<h4 class="date">2020-06-12</h4>
+<h4 class="date">2020-06-17</h4>
 
 </div>
 
@@ -537,7 +461,7 @@ Note that any generated files, e.g. HTML, png, CSS, etc., are not included in t
 <div id="versions" class="tab-pane fade">
 
 <p>
-These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/customization.Rmd</code>) and HTML (<code>docs/customization.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/workflowr.Rmd</code>) and HTML (<code>docs/workflowr.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
 </p>
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
@@ -563,19 +487,19 @@ Message
 <tbody>
 <tr>
 <td>
-html
+Rmd
 </td>
 <td>
-<a href="https://rawcdn.githack.com/workflowr/workflowr-useR2020/759ea05aa038be9ed7ff27d3419d43daa6d204e1/docs/customization.html" target="_blank">759ea05</a>
+<a href="https://github.com/workflowr/workflowr-useR2020/blob/622788b753dc8443fd7abc7953f99863252a3251/analysis/workflowr.Rmd" target="_blank">622788b</a>
 </td>
 <td>
 John Blischak
 </td>
 <td>
-2020-06-12
+2020-06-29
 </td>
 <td>
-Build site.
+Fix typo.
 </td>
 </tr>
 <tr>
@@ -583,16 +507,50 @@ Build site.
 Rmd
 </td>
 <td>
-<a href="https://github.com/workflowr/workflowr-useR2020/blob/43117cbfa7c0a6a96ff0888794dec88e70f2d229/analysis/customization.Rmd" target="_blank">43117cb</a>
+<a href="https://github.com/workflowr/workflowr-useR2020/blob/c3d41b6a784b9519fb59bb10f8895904dc717135/analysis/workflowr.Rmd" target="_blank">c3d41b6</a>
 </td>
 <td>
 John Blischak
 </td>
 <td>
-2020-06-12
+2020-06-25
 </td>
 <td>
-Add lesson on customization, and also customize tutorial website.
+Finish the section on deploying the website.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/workflowr/workflowr-useR2020/blob/c2c51f4f142e8905724a5bc3fb5ef56feeae2d8f/analysis/workflowr.Rmd" target="_blank">c2c51f4</a>
+</td>
+<td>
+John Blischak
+</td>
+<td>
+2020-06-24
+</td>
+<td>
+Continue working on section to create workflowr project.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/workflowr/workflowr-useR2020/blob/59a47268eddf265fdb83c5f0a73fd0c97f89b7eb/analysis/workflowr.Rmd" target="_blank">59a4726</a>
+</td>
+<td>
+John Blischak
+</td>
+<td>
+2020-06-17
+</td>
+<td>
+Start outline of creating workflowr website
 </td>
 </tr>
 </tbody>
@@ -602,90 +560,66 @@ Add lesson on customization, and also customize tutorial website.
 </div>
 </div>
 </div>
-<div id="introduction" class="section level2">
-<h2>Introduction</h2>
-<p>After you’ve created your workflowr website, you may wish to customize its appearance. This lesson covers a few key methods. For the full details, please read the official vignette <a href="https://jdblischak.github.io/workflowr/articles/wflow-02-customization.html">Customize your research website</a>.</p>
-</div>
-<div id="change-the-theme" class="section level2">
-<h2>Change the theme</h2>
-<p>The website you created with workflowr is an <a href="https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html">rmarkdown-generated website</a>. The rmarkdown website settings are saved in the configuration file <code>analysis/_site.yml</code>. The default theme applied to workflowr websites is “cosmo”. You should see the output section below that passes site-wide settings to <code>workflowr::wflow_html()</code>, which in turn passes these arguments to <code>rmarkdown::html_document()</code>.</p>
-<pre><code>output:
-  workflowr::wflow_html:
-    toc: yes
-    toc_float: yes
-    theme: cosmo
-    highlight: textmate</code></pre>
-<p>The available themes are from <a href="https://bootswatch.com/">Bootswatch</a>, but only a <a href="https://bookdown.org/yihui/rmarkdown/html-document.html#appearance-and-style">subset are available</a> for use with rmarkdown:</p>
-<ul>
-<li>cerulean</li>
-<li>cosmo</li>
-<li>darkly</li>
-<li>flatly</li>
-<li>journal</li>
-<li>lumen</li>
-<li>paper</li>
-<li>readable</li>
-<li>sandstone</li>
-<li>simplex</li>
-<li>spacelab</li>
-<li>united</li>
-<li>yeti</li>
-</ul>
-<p>As an example, this workflowr website uses the theme " yeti ".</p>
-<p>Go to <a href="https://bootswatch.com/">Bootswatch</a> and find a few themes you like. Then try them out by changing the value of theme in <code>analysis/_site.yml</code> and rebuilding one of the pages. You can either click the Knit HTML button or use <code>wflow_build()</code>. For convenience, choose a fast running Rmd so you can quickly explore multiple themes. Note that the updated theme will only be applied to rebuilt pages, so you’ll see the previous theme on different pages if you click around the website.</p>
-<p>Once you’ve decided on a theme, commit the change to <code>analysis/_site.yml</code> while additional republishing all the Rmd files with the following command:</p>
-<pre class="r"><code>wflow_publish(&quot;analysis/_site.yml&quot;, &quot;Change the theme&quot;, republish = TRUE)</code></pre>
-</div>
-<div id="change-the-appearance-of-the-workflowr-buttons" class="section level2">
-<h2>Change the appearance of the workflowr buttons</h2>
-<p>You don’t have to limit yourself to the pre-made themes. If you know CSS or are willing to tinker, you can fully customize every aspect of the HTML output. You do this by <a href="https://bookdown.org/yihui/rmarkdown/html-document.html#custom-css">specifying a custom CSS file</a>. In the context of a workflowr project, you can create the file <code>analysis/style.css</code> and then add it to the <code>output</code> section of <code>analysis/_site.yml</code>. You can of course name the CSS whatever you like. The important thing is that you save it in <code>analysis/</code> and specify the path relative to <code>_site.yml</code>.</p>
-<pre><code>output:
-  workflowr::wflow_html:
-    toc: yes
-    toc_float: yes
-    theme: cosmo
-    highlight: textmate
-    css: style.css</code></pre>
-<p>The workflowr buttons can be targeted with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors">CSS class selectors</a>. For example, to decrease the font size of the text in all the workflowr buttons, you could add the following rule:</p>
-<pre><code>.btn-workflowr {
-  font-size: 75%;
-}</code></pre>
-<p>You can also apply styles that are limited to specific types of workflowr buttons by using the corresponding class:</p>
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>CSS class</th>
-<th>workflowr button</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>.btn-workflowr-report</code></td>
-<td>The button for the workflowr report at the top of the page</td>
-</tr>
-<tr class="even">
-<td><code>.btn-workflowr-fig</code></td>
-<td>The buttons for table of past versions below each figure</td>
-</tr>
-<tr class="odd">
-<td><code>.btn-workflowr-sessioninfo</code></td>
-<td>The button for the session information at the bottom of the page</td>
-</tr>
-</tbody>
-</table>
-<p>For example, to center the buttons of past versions below each figure, you could add the following rule:</p>
-<pre><code>.btn-workflowr-fig {
-  display: block;
-  margin: auto;
-}</code></pre>
-<p>Similar to above, once you are satisfied with the changes you’ve made to the appearance, you can commit the changes and republish the webpages:</p>
-<pre class="r"><code>wflow_publish(c(&quot;analysis/_site.yml&quot;, &quot;analysis/style.css&quot;),
-              &quot;Style the workflowr buttons&quot;,
-              republish = TRUE)</code></pre>
+<p>Now that you have the Spotify analysis running, you will create a workflowr project to share the results and make sure it stays reproducible. This is a modified version of the official workflowr vignette <a href="https://jdblischak.github.io/workflowr/articles/wflow-01-getting-started.html">Getting started with workflowr</a>.</p>
+<p>Start by loading the workflowr package in the R console.</p>
+<pre class="r"><code>library(workflowr)</code></pre>
+<p>Workflowr uses Git to version all the changes to the code and results. For each version it snapshots, Git requires a user name and email for attribution. Thus before creating the workflowr project, tell Git your name and email address you would like to use. It is convenient if the email address is the same one you used to register with GitHub, but not required. This command only has to be run once per computer (i.e. not every time you create a new workflowr project).</p>
+<pre class="r"><code># Replace the example text with your information
+wflow_git_config(user.name = &quot;Your Name&quot;, user.email = &quot;email@domain&quot;)</code></pre>
+<p>You can run <code>wflow_git_config()</code> again with no arguments to confirm that Git is configured properly.</p>
+<pre class="r"><code>wflow_git_config()</code></pre>
+<p>Now that Git is configured, you can start your workflowr project using <code>wflow_start()</code>. It is more common to start a workflowr proejct in a brand new directory, but the workflowr setup can also be added to an existing analysis. To limit the tutorial to one RStudio Cloud project, you will create the workflowr project in the same directory where you’ve already been working on the Spotify analysis.</p>
+<p>The first argument to <code>wflow_start()</code> is the directory. The command below uses the relative path <code>.</code>, which refers to the current working directory. In this case it is equivalent to using the absolute path <code>/cloud/project/</code>. The second argument is the name of the project, which will get displayed on the website. And the third argument informs <code>wflow_start()</code> that the directory already exists, since by default it expects to create a new one.</p>
+<pre class="r"><code>wflow_start(directory = &quot;.&quot;, name = &quot;Spotify song analysis&quot;, existing = TRUE)</code></pre>
+<p>That adds various files and directories. For the purpose of the tutorial, focus on the following subset:</p>
+<pre><code>├── _workflowr.yml    # workflowr-specific settings
+├── analysis/         # Rmd files
+│   ├── index.Rmd     # Creates website homepage
+│   └── _site.yml     # website-specific settings
+├── data/             # data files
+├── docs/             # website files</code></pre>
+<p>The most important thing to remember is to perform your analysis in Rmd files in <code>analysis/</code>, and that the website files are saved in <code>docs/</code>.</p>
+<p>To see the default state of the website, run <code>wflow_build()</code>. It will build all the Rmd files currently in <code>analysis/</code> and save the HTML files in <code>docs/</code>. The website will either pop up in a new window or be displayed in the Viewer pane.</p>
+<pre class="r"><code>wflow_build()</code></pre>
+<p>Conveniently, if you run it a second time, it does nothing because the Rmd files have not changed since the last time the HTML files were built.</p>
+<pre class="r"><code>wflow_build()</code></pre>
+<p>Next add the Spotify analysis files to the workflowr project. You can do this via the files Pane or the running the commands below in the R console. The Rmd file goes to <code>analysis/</code> and the data file to <code>data/</code>.</p>
+<pre class="r"><code>file.rename(&quot;spotify.Rmd&quot;, &quot;analysis/spotify.Rmd&quot;)
+file.rename(&quot;spotify.csv&quot;, &quot;data/spotify.csv&quot;)</code></pre>
+<p>And since <code>spotify.csv</code> is no longer in the same directory as <code>spotify.Rmd</code>, you need to update the path passed to <code>read.csv()</code>. By default, all Rmd files in a workflowr project are executed in the root of the project, so the updated path is <code>data/spotify.csv</code>. Open <code>analysis/spotify.Rmd</code> and change the import line to the line below:</p>
+<pre><code>spotify &lt;- read.csv(&quot;data/spotify.csv&quot;, stringsAsFactors = FALSE)</code></pre>
+<p>Run <code>wflow_build()</code> again. This will build <code>analysis/spotify.Rmd</code> and then open the new file <code>docs/spotify.html</code>.</p>
+<pre class="r"><code>wflow_build()</code></pre>
+<p>Check the accuracy of the decision tree model and the random guessing model. Did you obtain the same results as everyone?</p>
+<p>This is because workflowr automatically sets the seed at the beginning of each Rmd file. The default seed used for a project is the date in the format <code>YYYYMMDD</code>. Open the file <code>_workflowr.yml</code> to confirm.</p>
+<p>Also, you can look at the reproducibility report at the top of the file to see the seed that is set and all the other reproducibility checks. The first check is failing because the Rmd file hasn’t been versioned with Git yet.</p>
+<p>So far you’ve run <code>wflow_build()</code> multiple times. This builds the HTML files, but it doesn’t version anything with Git. Run <code>wflow_status()</code> to see the current status of the Rmd files. The default Rmd files are “Unpublished” because they have been versioned with Git, but not their HTML files. The new <code>spotify.Rmd</code> is “Scratch” because its Rmd has not been versioned yet.</p>
+<pre class="r"><code>wflow_status()</code></pre>
+<p><img src="https://f1000researchdata.s3.amazonaws.com/manuscripts/22923/510c4de2-c96e-4471-9853-4ebce466a666_figure4.gif" /></p>
+<p>There currently isn’t a convenient way to navigate to the Spotify analysis on the website. To fix this, open <code>analysis/index.Rmd</code>, add the line below, and run <code>wflow_build()</code> again.</p>
+<pre><code>[Link to spotify analysis](spotify.html)</code></pre>
+<p>The line above is markdown syntax to create a link to the file <code>spotify.html</code>.</p>
+<p>Now that the website is looking good, it is time to “publish” your results.</p>
+<pre class="r"><code>wflow_publish(c(&quot;analysis/*Rmd&quot;, &quot;data/spotify.csv&quot;), &quot;Add spotify analysis&quot;)</code></pre>
+<p><code>wflow_publish()</code> performs three steps:</p>
+<ol style="list-style-type: decimal">
+<li>Commits the Rmd files and data file with Git</li>
+<li>Executes the code to build the HTML files</li>
+<li>Commits the HTML files with Git</li>
+</ol>
+<p>Re-running <code>wflow_status()</code> shows that all the files are “published”:</p>
+<pre class="r"><code>wflow_status()</code></pre>
+<p>Now that the files are committed in the Git repository, it’s time to push them to GitHub to share the analysis results.</p>
+<p>Go to <a href="https://github.com/new">https://github.com/new</a> (you’ll be prompted to login first if needed) to create a new repository. In the box labeled “Repository name”, type “workflowr-spotify”. Leave all the other settings as is, and click on the button “Create repository”.</p>
+<p>Back in the R console, you need to inform Git of the GitHub repository you just created. In Git terminology, a Git repository on a cloud service like GitHub is called a “remote”. Workflowr provides a convenience function <code>wflow_git_remote()</code> to register remote repositores with Git. Run the command below using your GitHub username:</p>
+<pre class="r"><code>wflow_git_remote(&quot;origin&quot;, user = &quot;&lt;github-username&gt;&quot;, repo = &quot;workflowr-spotify&quot;)</code></pre>
+<p>Run <code>wflow_git_remote()</code> a second time, this time with no arguments, to have it list the available remote repositories. The URL will look something like <code>https://github.com/&lt;github-username&gt;/workflowr-spotify.git</code>.</p>
+<pre class="r"><code>wflow_git_remote()</code></pre>
+<p>Note that “origin” is an alias for referring to that long URL. The name “origin” is a convention, and could be anything you wanted. The main benefit of following the convention is that it will make it easier to follow online troubleshooting resources.</p>
+<p>Now that Git knows about the remote GitHub repository, push the project to GitHub using <code>wflow_git_push()</code>. You’ll be prompted to enter your GitHub username in the R console followed by a secure popup menu for entering your GitHub password.</p>
+<pre class="r"><code>wflow_git_push()</code></pre>
+<p>The updated GitHub repository will automatically open in a new tab. To activate the website, navigate to the Settings tab and scroll down to the section “GitHub Pages”. Set the “Source” to “master branch /docs folder”. After it automatically updates, scroll back down to the same section to retreive the URL. It will look like <code>https://&lt;github-username&gt;.github.io/workflowr-spotify/</code>. Click on it to view your workflowr website. If it displays a “404 Not Found” error, manually add <code>index.html</code> to the URL in the web browser (Long-term you don’t have to do this. It only applies when GitHub Pages is first launching your website).</p>
+<p>Now you have a website that containing your reproducible results that you can share with your colleagues! And each time you make changes and push them to GitHub, the website will automatically update.</p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -694,33 +628,6 @@ Add lesson on customization, and also customize tutorial website.
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
 <pre class="r"><code>sessionInfo()</code></pre>
-<pre><code>R version 4.0.2 (2020-06-22)
-Platform: x86_64-w64-mingw32/x64 (64-bit)
-Running under: Windows 10 x64 (build 19041)
-
-Matrix products: default
-
-locale:
-[1] LC_COLLATE=English_United States.1252 
-[2] LC_CTYPE=English_United States.1252   
-[3] LC_MONETARY=English_United States.1252
-[4] LC_NUMERIC=C                          
-[5] LC_TIME=English_United States.1252    
-
-attached base packages:
-[1] stats     graphics  grDevices utils     datasets  methods   base     
-
-other attached packages:
-[1] workflowr_1.6.2.9000
-
-loaded via a namespace (and not attached):
- [1] Rcpp_1.0.4.6    rprojroot_1.3-2 digest_0.6.25   later_1.1.0.1  
- [5] R6_2.4.1        backports_1.1.7 git2r_0.27.1    magrittr_1.5   
- [9] evaluate_0.14   stringi_1.4.6   rlang_0.4.6     fs_1.4.1       
-[13] promises_1.1.1  whisker_0.4     rmarkdown_2.3   tools_4.0.2    
-[17] stringr_1.4.0   glue_1.4.1      httpuv_1.5.4    xfun_0.15      
-[21] yaml_2.2.1      compiler_4.0.2  htmltools_0.5.0 knitr_1.29     </code></pre>
-</div>
 </div>
 
 
@@ -737,8 +644,6 @@ footer is added to webpages before the MathJax javascript. -->
 </script>
 
 
-</div>
-</div>
 
 </div>
 
@@ -771,32 +676,6 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

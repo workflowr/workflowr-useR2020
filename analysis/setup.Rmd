@@ -43,7 +43,7 @@ plan is sufficient for this tutorial.
 To minimize any potential technical difficulties, I have created a project on
 RStudio Cloud that contains the tutorial files and has all the necessary
 packages already installed. To get started, go to
-https://rstudio.cloud/project/<insert-project-id>. This will automatically
+https://rstudio.cloud/project/1429887. This will automatically
 create a copy of the project in your user workspace. Make sure to click the
 button "Save a Permanent Copy", otherwise your copy of the project will be
 deleted afterwards.

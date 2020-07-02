@@ -338,7 +338,7 @@ $(document).ready(function () {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-06-29
+<strong>Last updated:</strong> 2020-07-02
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -429,16 +429,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomworkflowrworkflowruseR2020tree5cef3ebfb9d98153e77efe4ef7556f9ed6f0f15atargetblank5cef3eba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/workflowr/workflowr-useR2020/tree/5cef3ebfb9d98153e77efe4ef7556f9ed6f0f15a" target="_blank">5cef3eb</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomworkflowrworkflowruseR2020tree6896c7a7c6730261e760366436ee8caf8b018d08targetblank6896c7aa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/workflowr/workflowr-useR2020/tree/6896c7a7c6730261e760366436ee8caf8b018d08" target="_blank">6896c7a</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomworkflowrworkflowruseR2020tree5cef3ebfb9d98153e77efe4ef7556f9ed6f0f15atargetblank5cef3eba" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomworkflowrworkflowruseR2020tree6896c7a7c6730261e760366436ee8caf8b018d08targetblank6896c7aa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/workflowr/workflowr-useR2020/tree/5cef3ebfb9d98153e77efe4ef7556f9ed6f0f15a" target="_blank">5cef3eb</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/workflowr/workflowr-useR2020/tree/6896c7a7c6730261e760366436ee8caf8b018d08" target="_blank">6896c7a</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -485,6 +485,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/workflowr/workflowr-useR2020/blob/6896c7a7c6730261e760366436ee8caf8b018d08/analysis/workflowr.Rmd" target="_blank">6896c7a</a>
+</td>
+<td>
+John Blischak
+</td>
+<td>
+2020-07-02
+</td>
+<td>
+Some updates to tutorial steps.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/workflowr/workflowr-useR2020/f2e1543889c738f88aa2177671c4c0cafb478bb5/docs/workflowr.html" target="_blank">f2e1543</a>
+</td>
+<td>
+John Blischak
+</td>
+<td>
+2020-06-29
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -566,9 +600,7 @@ Start outline of creating workflowr website
 <p>Workflowr uses Git to version all the changes to the code and results. For each version it snapshots, Git requires a user name and email for attribution. Thus before creating the workflowr project, tell Git your name and email address you would like to use. It is convenient if the email address is the same one you used to register with GitHub, but not required. This command only has to be run once per computer (i.e. not every time you create a new workflowr project).</p>
 <pre class="r"><code># Replace the example text with your information
 wflow_git_config(user.name = &quot;Your Name&quot;, user.email = &quot;email@domain&quot;)</code></pre>
-<p>You can run <code>wflow_git_config()</code> again with no arguments to confirm that Git is configured properly.</p>
-<pre class="r"><code>wflow_git_config()</code></pre>
-<p>Now that Git is configured, you can start your workflowr project using <code>wflow_start()</code>. It is more common to start a workflowr proejct in a brand new directory, but the workflowr setup can also be added to an existing analysis. To limit the tutorial to one RStudio Cloud project, you will create the workflowr project in the same directory where you’ve already been working on the Spotify analysis.</p>
+<p>Now that Git is configured, you can start your workflowr project using <code>wflow_start()</code>. It is more common to start a workflowr project in a brand new directory, but the workflowr setup can also be added to an existing analysis. To limit the tutorial to one RStudio Cloud project, you will create the workflowr project in the same directory where you’ve already been working on the Spotify analysis.</p>
 <p>The first argument to <code>wflow_start()</code> is the directory. The command below uses the relative path <code>.</code>, which refers to the current working directory. In this case it is equivalent to using the absolute path <code>/cloud/project/</code>. The second argument is the name of the project, which will get displayed on the website. And the third argument informs <code>wflow_start()</code> that the directory already exists, since by default it expects to create a new one.</p>
 <pre class="r"><code>wflow_start(directory = &quot;.&quot;, name = &quot;Spotify song analysis&quot;, existing = TRUE)</code></pre>
 <p>That adds various files and directories. For the purpose of the tutorial, focus on the following subset:</p>
@@ -583,10 +615,12 @@ wflow_git_config(user.name = &quot;Your Name&quot;, user.email = &quot;email@dom
 <pre class="r"><code>wflow_build()</code></pre>
 <p>Conveniently, if you run it a second time, it does nothing because the Rmd files have not changed since the last time the HTML files were built.</p>
 <pre class="r"><code>wflow_build()</code></pre>
-<p>Next add the Spotify analysis files to the workflowr project. You can do this via the files Pane or the running the commands below in the R console. The Rmd file goes to <code>analysis/</code> and the data file to <code>data/</code>.</p>
+<p>Next add the Spotify analysis files to the workflowr project. You can do this via the files Pane or the running the commands below in the R console. The Rmd file goes to <code>analysis/</code> and the data file to <code>data/</code>. Also remove <code>spotify.html</code> since it will be re-built later as part of the workflowr project.</p>
 <pre class="r"><code>file.rename(&quot;spotify.Rmd&quot;, &quot;analysis/spotify.Rmd&quot;)
-file.rename(&quot;spotify.csv&quot;, &quot;data/spotify.csv&quot;)</code></pre>
-<p>And since <code>spotify.csv</code> is no longer in the same directory as <code>spotify.Rmd</code>, you need to update the path passed to <code>read.csv()</code>. By default, all Rmd files in a workflowr project are executed in the root of the project, so the updated path is <code>data/spotify.csv</code>. Open <code>analysis/spotify.Rmd</code> and change the import line to the line below:</p>
+file.rename(&quot;spotify.csv&quot;, &quot;data/spotify.csv&quot;)
+file.remove(&quot;spotify.html&quot;)</code></pre>
+<p>After moving the Rmd file, RStudio will prompt you to close <code>spotify.Rmd</code>. Accept and re-open it by navigating to <code>analysis/</code> in the Files pane.</p>
+<p>Since <code>spotify.csv</code> is no longer in the same directory as <code>spotify.Rmd</code>, you need to update the path passed to <code>read.csv()</code>. By default, all Rmd files in a workflowr project are executed in the root of the project, so the updated path is <code>data/spotify.csv</code>. In <code>analysis/spotify.Rmd</code> change the import line to the line below:</p>
 <pre><code>spotify &lt;- read.csv(&quot;data/spotify.csv&quot;, stringsAsFactors = FALSE)</code></pre>
 <p>Run <code>wflow_build()</code> again. This will build <code>analysis/spotify.Rmd</code> and then open the new file <code>docs/spotify.html</code>.</p>
 <pre class="r"><code>wflow_build()</code></pre>
@@ -613,12 +647,11 @@ file.rename(&quot;spotify.csv&quot;, &quot;data/spotify.csv&quot;)</code></pre>
 <p>Go to <a href="https://github.com/new">https://github.com/new</a> (you’ll be prompted to login first if needed) to create a new repository. In the box labeled “Repository name”, type “workflowr-spotify”. Leave all the other settings as is, and click on the button “Create repository”.</p>
 <p>Back in the R console, you need to inform Git of the GitHub repository you just created. In Git terminology, a Git repository on a cloud service like GitHub is called a “remote”. Workflowr provides a convenience function <code>wflow_git_remote()</code> to register remote repositores with Git. Run the command below using your GitHub username:</p>
 <pre class="r"><code>wflow_git_remote(&quot;origin&quot;, user = &quot;&lt;github-username&gt;&quot;, repo = &quot;workflowr-spotify&quot;)</code></pre>
-<p>Run <code>wflow_git_remote()</code> a second time, this time with no arguments, to have it list the available remote repositories. The URL will look something like <code>https://github.com/&lt;github-username&gt;/workflowr-spotify.git</code>.</p>
-<pre class="r"><code>wflow_git_remote()</code></pre>
+<p>The URL will look something like <code>https://github.com/&lt;github-username&gt;/workflowr-spotify.git</code>.</p>
 <p>Note that “origin” is an alias for referring to that long URL. The name “origin” is a convention, and could be anything you wanted. The main benefit of following the convention is that it will make it easier to follow online troubleshooting resources.</p>
 <p>Now that Git knows about the remote GitHub repository, push the project to GitHub using <code>wflow_git_push()</code>. You’ll be prompted to enter your GitHub username in the R console followed by a secure popup menu for entering your GitHub password.</p>
 <pre class="r"><code>wflow_git_push()</code></pre>
-<p>The updated GitHub repository will automatically open in a new tab. To activate the website, navigate to the Settings tab and scroll down to the section “GitHub Pages”. Set the “Source” to “master branch /docs folder”. After it automatically updates, scroll back down to the same section to retreive the URL. It will look like <code>https://&lt;github-username&gt;.github.io/workflowr-spotify/</code>. Click on it to view your workflowr website. If it displays a “404 Not Found” error, manually add <code>index.html</code> to the URL in the web browser (Long-term you don’t have to do this. It only applies when GitHub Pages is first launching your website).</p>
+<p>The updated GitHub repository will automatically open in a new tab. To activate the website, navigate to the Settings tab and scroll down to the section “GitHub Pages”. Set the “Source” to “master branch /docs folder”. After it automatically updates, scroll back down to the same section to retreive the URL. It will look like <code>https://&lt;github-username&gt;.github.io/workflowr-spotify/</code>. Click on it to view your workflowr website. If it displays a “404 Not Found” error, manually add <code>index.html</code> to the URL in the web browser (Long-term you don’t have to do this. It only applies when GitHub Pages is first launching your website). If that trick doesn’t work, you’ll have to be patient and wait a few minutes for the site to be available.</p>
 <p>Now you have a website that containing your reproducible results that you can share with your colleagues! And each time you make changes and push them to GitHub, the website will automatically update.</p>
 <br>
 <p>

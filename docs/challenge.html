@@ -414,7 +414,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-06-29
+<strong>Last updated:</strong> 2020-07-02
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -445,16 +445,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomworkflowrworkflowruseR2020tree5cef3ebfb9d98153e77efe4ef7556f9ed6f0f15atargetblank5cef3eba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/workflowr/workflowr-useR2020/tree/5cef3ebfb9d98153e77efe4ef7556f9ed6f0f15a" target="_blank">5cef3eb</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomworkflowrworkflowruseR2020tree6896c7a7c6730261e760366436ee8caf8b018d08targetblank6896c7aa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/workflowr/workflowr-useR2020/tree/6896c7a7c6730261e760366436ee8caf8b018d08" target="_blank">6896c7a</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomworkflowrworkflowruseR2020tree5cef3ebfb9d98153e77efe4ef7556f9ed6f0f15atargetblank5cef3eba" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomworkflowrworkflowruseR2020tree6896c7a7c6730261e760366436ee8caf8b018d08targetblank6896c7aa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/workflowr/workflowr-useR2020/tree/5cef3ebfb9d98153e77efe4ef7556f9ed6f0f15a" target="_blank">5cef3eb</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/workflowr/workflowr-useR2020/tree/6896c7a7c6730261e760366436ee8caf8b018d08" target="_blank">6896c7a</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -501,6 +501,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/workflowr/workflowr-useR2020/blob/6896c7a7c6730261e760366436ee8caf8b018d08/analysis/challenge.Rmd" target="_blank">6896c7a</a>
+</td>
+<td>
+John Blischak
+</td>
+<td>
+2020-07-02
+</td>
+<td>
+Some updates to tutorial steps.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/workflowr/workflowr-useR2020/f2e1543889c738f88aa2177671c4c0cafb478bb5/docs/challenge.html" target="_blank">f2e1543</a>
+</td>
+<td>
+John Blischak
+</td>
+<td>
+2020-06-29
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -589,7 +623,7 @@ NEW: Understanding song genres using Spotify audio features and decision trees i
 <div id="file-paths" class="section level2">
 <h2>File paths</h2>
 <p>The first error you will encounter is below:</p>
-<pre><code>Quitting from lines 16-21 (spotify.Rmd) 
+<pre><code>Quitting from lines 18-23 (spotify.Rmd) 
 Error in file(file, &quot;rt&quot;) : cannot open the connection
 Calls: &lt;Anonymous&gt; ... withVisible -&gt; eval -&gt; eval -&gt; read.csv -&gt; read.table -&gt; file
 Execution halted</code></pre>
@@ -598,18 +632,18 @@ Execution halted</code></pre>
 <div id="undefined-variable" class="section level2">
 <h2>Undefined variable</h2>
 <p>The next error you encounter is:</p>
-<pre><code>Quitting from lines 27-30 (spotify.Rmd) 
+<pre><code>Quitting from lines 28-31 (spotify.Rmd) 
 Error in sample.int(length(x), size, replace, prob) : 
   object &#39;numTrainingSamples&#39; not found
 Calls: &lt;Anonymous&gt; ... withVisible -&gt; eval -&gt; eval -&gt; sample -&gt; sample.int
 Execution halted</code></pre>
 <p>It looks like the variable <code>numTrainingSamples</code> isn’t defined in the Rmd file. This error often occurs when a variable is interactively created in the R console, but you forget to define it in the script.</p>
-<p>Based on the description above the code chunk, can you define the variable <code>numTrainingSamples</code>? Hint: You can obtain the number of samples with <code>nrow(spotify)</code>.</p>
+<p>The training set should contain 3/4 of the samples. Can you define the variable <code>numTrainingSamples</code>? Hint: You can obtain the number of samples with <code>nrow(spotify)</code>.</p>
 </div>
 <div id="missing-package" class="section level2">
 <h2>Missing package</h2>
 <p>The next error you encounter is:</p>
-<pre><code>Quitting from lines 36-39 (spotify.Rmd) 
+<pre><code>Quitting from lines 37-40 (spotify.Rmd) 
 Error in rpart(genre ~ ., data = spotifyTraining) : 
   could not find function &quot;rpart&quot;
 Calls: &lt;Anonymous&gt; ... handle -&gt; withCallingHandlers -&gt; withVisible -&gt; eval -&gt; eval
@@ -620,13 +654,13 @@ Execution halted</code></pre>
 <div id="renamed-variable" class="section level2">
 <h2>Renamed variable</h2>
 <p>The next error you encounter is:</p>
-<pre><code>Quitting from lines 61-66 (spotify.Rmd) 
-Error in mean(spotifyTesting[, 1] == predict_random) : 
+<pre><code>Quitting from lines 62-67 (spotify.Rmd) 
+Error in mean(spotifyTesting[, 1] == predictGuess) : 
   object &#39;predict_random&#39; not found
 Calls: &lt;Anonymous&gt; ... withCallingHandlers -&gt; withVisible -&gt; eval -&gt; eval -&gt; mean
 
 Execution halted</code></pre>
-<p>R can’t find the variable named <code>predict_random</code>. Look at the surrounding code: what do you think the name of this variable should be?</p>
+<p>R can’t find the variable named <code>predictGuess</code>. Look at the surrounding code: what do you think the name of this variable should be?</p>
 <p>Renaming variables during an analysis can lead to these subtle errors. Since both the original and updated versions of the variable are defined in the current R session, the code will continue to run. But when you or someone else tries to run the code in a clean R session, the code will unexpectedly fail.</p>
 </div>
 <div id="compare-results" class="section level2">

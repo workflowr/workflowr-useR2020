@@ -38,15 +38,8 @@ once per computer (i.e. not every time you create a new workflowr project).
 wflow_git_config(user.name = "Your Name", user.email = "email@domain")
 ```
 
-You can run `wflow_git_config()` again with no arguments to confirm that Git is
-configured properly.
-
-```{r git-config-confirm}
-wflow_git_config()
-```
-
 Now that Git is configured, you can start your workflowr project using
-`wflow_start()`. It is more common to start a workflowr proejct in a brand new
+`wflow_start()`. It is more common to start a workflowr project in a brand new
 directory, but the workflowr setup can also be added to an existing analysis. To
 limit the tutorial to one RStudio Cloud project, you will create the workflowr
 project in the same directory where you've already been working on the Spotify
@@ -95,17 +88,22 @@ wflow_build()
 
 Next add the Spotify analysis files to the workflowr project. You can do this
 via the files Pane or the running the commands below in the R console. The Rmd
-file goes to `analysis/` and the data file to `data/`.
+file goes to `analysis/` and the data file to `data/`. Also remove
+`spotify.html` since it will be re-built later as part of the workflowr project.
 
 ```{r move-files}
 file.rename("spotify.Rmd", "analysis/spotify.Rmd")
 file.rename("spotify.csv", "data/spotify.csv")
+file.remove("spotify.html")
 ```
 
-And since `spotify.csv` is no longer in the same directory as `spotify.Rmd`,
+After moving the Rmd file, RStudio will prompt you to close `spotify.Rmd`.
+Accept and re-open it by navigating to `analysis/` in the Files pane.
+
+Since `spotify.csv` is no longer in the same directory as `spotify.Rmd`,
 you need to update the path passed to `read.csv()`. By default, all Rmd files
 in a workflowr project are executed in the root of the project, so the updated
-path is `data/spotify.csv`. Open `analysis/spotify.Rmd` and change the import
+path is `data/spotify.csv`. In `analysis/spotify.Rmd` change the import
 line to the line below:
 
 ```
@@ -191,13 +189,8 @@ username:
 wflow_git_remote("origin", user = "<github-username>", repo = "workflowr-spotify")
 ```
 
-Run `wflow_git_remote()` a second time, this time with no arguments, to have it
-list the available remote repositories. The URL will look something like
+The URL will look something like
 `https://github.com/<github-username>/workflowr-spotify.git`.
-
-```{r git-remote-confirm}
-wflow_git_remote()
-```
 
 Note that "origin" is an alias for referring to that long URL. The name "origin"
 is a convention, and could be anything you wanted. The main benefit of following
@@ -220,7 +213,9 @@ updates, scroll back down to the same section to retreive the URL. It will look
 like `https://<github-username>.github.io/workflowr-spotify/`. Click on it to
 view your workflowr website. If it displays a "404 Not Found" error, manually
 add `index.html` to the URL in the web browser (Long-term you don't have to do
-this. It only applies when GitHub Pages is first launching your website).
+this. It only applies when GitHub Pages is first launching your website). If
+that trick doesn't work, you'll have to be patient and wait a few minutes for
+the site to be available.
 
 Now you have a website that containing your reproducible results that you can
 share with your colleagues! And each time you make changes and push them to

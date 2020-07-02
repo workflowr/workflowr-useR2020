@@ -38,6 +38,9 @@ plan is sufficient for this tutorial.
 
 ![](assets/create-rscloud-account.jpg)
 
+If you do use an email address to create your account, you will need to verify
+your email address by clicking on the link in the email sent by RStudio Cloud.
+
 ## Create your own copy of the tutorial project
 
 To minimize any potential technical difficulties, I have created a project on

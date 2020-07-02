@@ -62,7 +62,7 @@ file where the error occurred.
 The first error you will encounter is below:
 
 ```
-Quitting from lines 16-21 (spotify.Rmd) 
+Quitting from lines 18-23 (spotify.Rmd) 
 Error in file(file, "rt") : cannot open the connection
 Calls: <Anonymous> ... withVisible -> eval -> eval -> read.csv -> read.table -> file
 Execution halted
@@ -77,7 +77,7 @@ update the path and re-run the analysis.
 The next error you encounter is:
 
 ```
-Quitting from lines 27-30 (spotify.Rmd) 
+Quitting from lines 28-31 (spotify.Rmd) 
 Error in sample.int(length(x), size, replace, prob) : 
   object 'numTrainingSamples' not found
 Calls: <Anonymous> ... withVisible -> eval -> eval -> sample -> sample.int
@@ -88,7 +88,7 @@ It looks like the variable `numTrainingSamples` isn't defined in the Rmd file.
 This error often occurs when a variable is interactively created in the R
 console, but you forget to define it in the script.
 
-Based on the description above the code chunk, can you define the variable
+The training set should contain 3/4 of the samples. Can you define the variable
 `numTrainingSamples`? Hint: You can obtain the number of samples with
 `nrow(spotify)`.
 
@@ -97,7 +97,7 @@ Based on the description above the code chunk, can you define the variable
 The next error you encounter is:
 
 ```
-Quitting from lines 36-39 (spotify.Rmd) 
+Quitting from lines 37-40 (spotify.Rmd) 
 Error in rpart(genre ~ ., data = spotifyTraining) : 
   could not find function "rpart"
 Calls: <Anonymous> ... handle -> withCallingHandlers -> withVisible -> eval -> eval
@@ -116,15 +116,15 @@ to be loaded?
 The next error you encounter is:
 
 ```
-Quitting from lines 61-66 (spotify.Rmd) 
-Error in mean(spotifyTesting[, 1] == predict_random) : 
+Quitting from lines 62-67 (spotify.Rmd) 
+Error in mean(spotifyTesting[, 1] == predictGuess) : 
   object 'predict_random' not found
 Calls: <Anonymous> ... withCallingHandlers -> withVisible -> eval -> eval -> mean
 
 Execution halted
 ```
 
-R can't find the variable named `predict_random`. Look at the surrounding code:
+R can't find the variable named `predictGuess`. Look at the surrounding code:
 what do you think the name of this variable should be?
 
 Renaming variables during an analysis can lead to these subtle errors. Since

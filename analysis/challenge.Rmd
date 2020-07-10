@@ -56,26 +56,6 @@ The function `read.csv()` is unable to open the data file. What's wrong with the
 path to the file? Apply what you know about absolute and relative paths to
 update the path and re-run the analysis.
 
-## Undefined variable
-
-The next error you encounter is:
-
-```
-Quitting from lines 28-31 (spotify.Rmd) 
-Error in sample.int(length(x), size, replace, prob) : 
-  object 'numTrainingSamples' not found
-Calls: <Anonymous> ... withVisible -> eval -> eval -> sample -> sample.int
-Execution halted
-```
-
-It looks like the variable `numTrainingSamples` isn't defined in the Rmd file.
-This error often occurs when a variable is interactively created in the R
-console, but you forget to define it in the script.
-
-The training set should contain 3/4 of the samples. Can you define the variable
-`numTrainingSamples`? Hint: You can obtain the number of samples with
-`nrow(spotify)`.
-
 ## Missing package
 
 The next error you encounter is:

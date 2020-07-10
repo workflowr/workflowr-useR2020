@@ -96,9 +96,8 @@ both the original and updated versions of the variable are defined in the curren
 R session, the code will continue to run. But when you or someone else tries to
 run the code in a clean R session, the code will unexpectedly fail.
 
-## Compare results
+## Finshed?
 
-Success! The analysis now runs. Compare your prediction results to that of your
-partners' and/or re-run the analysis again. Are the results always identical?
-Why not? What could you do if you wanted to publish these results and allow
-others to exactly reproduce your findings?
+Was your group able to reproduce the analysis? If yes, please exit the breakout
+room to rejoin the main room. This will help us know once all the groups have
+finished.

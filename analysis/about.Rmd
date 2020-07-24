@@ -7,7 +7,16 @@ editor_options:
   chunk_output_type: console
 ---
 
-This tutorial was delivered online as part of the virtual [useR!
-2020][user!2020] conference.
+This tutorial was delivered online to members of the Department of Human
+Genetics at the University of Chicago on Thursday, July 2nd, 2020.
+
+It was a trial run of the tutorial that was later delivered on Thursday, July
+23rd, 2020, as part of the virtual [useR! 2020][user!2020] conference.
 
 [useR!2020]: https://user2020.r-project.org/
+
+Substantial changes were made between this and the final version of the tutorial
+in order to fit within 90 minutes and also better adapt to a virtual setting.
+The final version of the tutorial is available as [Google Slides][final].
+
+[final]: https://bit.ly/useR-workflowr-slides

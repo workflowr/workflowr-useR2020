@@ -13,6 +13,7 @@
 
 <title>About</title>
 
+<script src="site_libs/header-attrs-2.3/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
@@ -32,6 +33,8 @@ div.section {
   padding-top: 12px;
 }
 </style>
+
+
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -334,7 +337,7 @@ $(document).ready(function () {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-06-29
+<strong>Last updated:</strong> 2020-07-24
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -365,16 +368,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomworkflowrworkflowruseR2020tree5cef3ebfb9d98153e77efe4ef7556f9ed6f0f15atargetblank5cef3eba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/workflowr/workflowr-useR2020/tree/5cef3ebfb9d98153e77efe4ef7556f9ed6f0f15a" target="_blank">5cef3eb</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomworkflowrworkflowruseR2020treebe69981b83496a96d429a6d7db6b7a578cb0c772targetblankbe69981a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/workflowr/workflowr-useR2020/tree/be69981b83496a96d429a6d7db6b7a578cb0c772" target="_blank">be69981</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomworkflowrworkflowruseR2020tree5cef3ebfb9d98153e77efe4ef7556f9ed6f0f15atargetblank5cef3eba" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomworkflowrworkflowruseR2020treebe69981b83496a96d429a6d7db6b7a578cb0c772targetblankbe69981a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/workflowr/workflowr-useR2020/tree/5cef3ebfb9d98153e77efe4ef7556f9ed6f0f15a" target="_blank">5cef3eb</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/workflowr/workflowr-useR2020/tree/be69981b83496a96d429a6d7db6b7a578cb0c772" target="_blank">be69981</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -421,6 +424,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/workflowr/workflowr-useR2020/blob/be69981b83496a96d429a6d7db6b7a578cb0c772/analysis/about.Rmd" target="_blank">be69981</a>
+</td>
+<td>
+John Blischak
+</td>
+<td>
+2020-07-24
+</td>
+<td>
+Update tutorial description.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/workflowr/workflowr-useR2020/f2e1543889c738f88aa2177671c4c0cafb478bb5/docs/about.html" target="_blank">f2e1543</a>
+</td>
+<td>
+John Blischak
+</td>
+<td>
+2020-06-29
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -479,7 +516,9 @@ Start workflowr project.
 </div>
 </div>
 </div>
-<p>This tutorial was delivered online as part of the virtual <a href="https://user2020.r-project.org/">useR! 2020</a> conference.</p>
+<p>This tutorial was delivered online to members of the Department of Human Genetics at the University of Chicago on Thursday, July 2nd, 2020.</p>
+<p>It was a trial run of the tutorial that was later delivered on Thursday, July 23rd, 2020, as part of the virtual <a href="https://user2020.r-project.org/">useR! 2020</a> conference.</p>
+<p>Substantial changes were made between this and the final version of the tutorial in order to fit within 90 minutes and also better adapt to a virtual setting. The final version of the tutorial is available as <a href="https://bit.ly/useR-workflowr-slides">Google Slides</a>.</p>
 
 
 <!-- Adjust MathJax settings so that all math formulae are shown using
@@ -493,6 +532,8 @@ footer is added to webpages before the MathJax javascript. -->
     "HTML-CSS": { availableFonts: ["TeX"] }
   });
 </script>
+
+
 
 
 

@@ -32,14 +32,30 @@ steps:
 
 The analysis purposefully contains various issues that make it difficult to
 reproduce. Open the file `spotify.Rmd` by clicking on it in the RStudio Files
-pane.
+pane. In the Editor pane, click on "Run" and then click on "Run All" to execute
+all the code chunks in the R console (Ctrl/Cmd+Alt+Enter). Note that the code
+completes and produces a plot in the Plots pane.
 
-Next click the Knit button to re-build the document. The code fails
-due to an error. Click on "Output" to see the lines in the Rmd
+Next click the Knit button to re-build the document. This time the code fails
+due to an error. The difference is because RStudio knits Rmd files in a clean
+R session. In contrast, the R session currently running in the R console already
+had all the analysis variables created because the workspace was restored. This
+is why you want to avoid saving your workspace: it can make it appear that your
+code is running when it is actually contains errors. In fact, if you scroll
+back up through the R console history, you'll see that some errors did occur.
+But the analysis still completed since the intermediate objects were already
+available.
+
+To fix the workspace issue, first go to the Files pane and delete the file
+`.RData` that contains the saved workspace. Second, go to "Tools" -> "Global
+Options...". Unclick the checkbox "Restore .RData into workspace at startup" and
+change the dropdown "Save workspace to to .RData on exit" to Never.
+
+![](assets/rstudio-workspace.png)
+
+Now you can proceed to fix the analysis one error at a time. Click on Knit to
+produce the first error. Then click on "Output" to see the lines in the Rmd
 file where the error occurred.
-
-Working together in small groups, reproduce the analysis by fixing the errors.
-Below are hints on how to fix each error you will find.
 
 ## File paths
 
